@@ -33,13 +33,13 @@ public class TrangChinh_Form extends JFrame implements ActionListener {
    private JPanel pnlContent;
    private JButton btndangxuat;
    private JButton currentBtn = null;
-   private Color colorNen = new Color(255, 216, 164);
-   private Color colorNhat = new Color(255, 231, 188);
-   private Color colorDam = new Color(255, 178, 44);
+   private Color colorNen = new Color(30, 41, 59);
+   private Color colorNhat = new Color(30, 41, 59);
+   private Color colorDam = new Color(65, 137, 230);
    private Font fontMenu = new Font("Segoe UI", 1, 14);
 
    public TrangChinh_Form() {
-      this.setTitle("Nhà hàng TripleND - Hệ thống quản lý");
+      this.setTitle("Smart Restaurant - Hệ thống quản lý");
       this.setDefaultCloseOperation(3);
       this.setSize(1200, 800);
       this.setExtendedState(6);
@@ -59,29 +59,12 @@ public class TrangChinh_Form extends JFrame implements ActionListener {
       pTrai.setPreferredSize(new Dimension(220, this.getHeight()));
       pTrai.setLayout(new BoxLayout(pTrai, 1));
       pTrai.setBorder(BorderFactory.createEmptyBorder(20, 10, 20, 10));
-      JLabel lblLogo = new JLabel();
-      ImageIcon logoIcon = this.getIcon("image/logo.png", 200, 150);
-      if (logoIcon != null) {
-         lblLogo.setIcon(logoIcon);
-      } else {
-         lblLogo.setText("TRIPLE ND");
-         lblLogo.setFont(new Font("Arial", 1, 24));
-      }
-
-      lblLogo.setAlignmentX(0.5F);
-      lblLogo.setBorder(BorderFactory.createEmptyBorder(0, 0, 20, 0));
-      pTrai.add(lblLogo);
-      String var10002 = this.getTenRutGon(userName);
-      JLabel lblHello = new JLabel("Xin chào, " + var10002);
-      lblHello.setFont(new Font("Segoe UI", 2, 12));
+      JLabel lblHello = new JLabel("Xin chào " + userRole);
+      lblHello.setFont(new Font("Segoe UI", 1, 16));
+      lblHello.setForeground(Color.WHITE);
       lblHello.setAlignmentX(0.5F);
+      lblHello.setBorder(BorderFactory.createEmptyBorder(20, 0, 50, 0));
       pTrai.add(lblHello);
-      JLabel lblRole = new JLabel("(" + userRole + ")");
-      lblRole.setFont(new Font("Segoe UI", 1, 13));
-      lblRole.setForeground(Color.RED);
-      lblRole.setAlignmentX(0.5F);
-      lblRole.setBorder(BorderFactory.createEmptyBorder(0, 0, 40, 0));
-      pTrai.add(lblRole);
       this.cardLayout = new CardLayout();
       this.pnlContent = new JPanel(this.cardLayout);
 
@@ -199,7 +182,7 @@ public class TrangChinh_Form extends JFrame implements ActionListener {
       btn.setBorder(BorderFactory.createEmptyBorder(5, 15, 5, 15));
       btn.setCursor(Cursor.getPredefinedCursor(12));
       btn.setBackground(bgColor);
-      btn.setForeground(Color.BLACK);
+      btn.setForeground(Color.WHITE);
       btn.addMouseListener(new MouseAdapter() {
          public void mouseEntered(MouseEvent e) {
             btn.setBackground(TrangChinh_Form.this.colorDam);
@@ -238,6 +221,7 @@ public class TrangChinh_Form extends JFrame implements ActionListener {
       final JMenuItem item = new JMenuItem(text);
       item.setFont(this.fontMenu);
       item.setBackground(this.colorNhat);
+      item.setForeground(Color.WHITE);
       item.setPreferredSize(new Dimension(218, 40));
       item.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
       ImageIcon icon = this.getIcon(iconPath, 20, 20);
